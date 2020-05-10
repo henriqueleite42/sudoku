@@ -1,0 +1,120 @@
+----- 0  1  2  | 3  4  5  |  6  7  8
+-------------------------------------
+A 0 | 0  1  2  | 3  4  5  | 6  7  8
+B 1 | 1  2  3  | 4  5  6  | 7  8  9
+C 2 | 2  3  4  | 5  6  7  | 8  9  10
+-------------------------------------
+D 3 | 3  4  5  | 6  7  8  | 9  10 11
+E 4 | 4  5  6  | 7  8  9  | 10 11 12
+F 5 | 5  6  7  | 8  9  10 | 11 12 13
+-------------------------------------
+G 6 | 6  7  8  | 9  10 11 | 12 13 14
+H 7 | 7  8  9  | 10 11 12 | 13 14 15
+I 8 | 8  9  10 | 11 12 13 | 14 15 16
+
+-------------------------------------
+
+--- 0  1  2  | 3  4  5  | 6  7  8
+-------------------------------------
+A | A0 A1 A2 | A3 A4 A5 | A6 A7 A8
+B | B0 B1 B2 | B3 B4 B5 | B6 B7 B8
+C | C0 C1 C2 | C3 C4 C5 | C6 C7 C8
+-----------------------------------
+D | D0 D1 D2 | D3 D4 D5 | D6 D7 D8
+E | E0 E1 E2 | E3 E4 E5 | E6 E7 E8
+F | F0 F1 F2 | F3 F4 F5 | F6 F7 F8
+-----------------------------------
+G | G0 G1 G2 | G3 G4 G5 | G6 G7 G8
+H | H0 H1 H2 | H3 H4 H5 | H6 H7 H8
+I | I0 I1 I2 | I3 I4 I5 | I6 I7 I8
+
+Array<Array<Array<Array<CellInterface>>>>
+[ => Array Principal
+  [ => Linha (0-2)
+    [ => Coluna (0-2)
+      [ => Linha Da Coluna (0-2)
+        {}, => Coluna da Coluna (0-2)
+        {},
+        {}
+      ],
+      [ => Linha Da Coluna
+        {}, => Coluna da Coluna
+        {},
+        {}
+      ],
+      [ => Linha Da Coluna
+        {}, => Coluna da Coluna
+        {},
+        {}
+      ]
+    ],
+    [ => Coluna
+      [{}, {}, {}],
+      [{}, {}, {}],
+      [{}, {}, {}]
+    ],
+    [ => Coluna
+      [{}, {}, {}],
+      [{}, {}, {}],
+      [{}, {}, {}]
+    ]
+  ]
+]
+
+if (l <= 2) {
+  if (c <= 2) {
+    b0
+  } else if (c <= 5) {
+    b1
+  } else {
+    b2
+  }
+} else if (l <= 5) {
+  if (c <= 2) {
+    b0
+  } else if (c <= 5) {
+    b1
+  } else {
+    b2
+  }
+} else {
+  if (c <= 2) {
+    b0
+  } else if (c <= 5) {
+    b1
+  } else {
+    b2
+  }
+}
+
+B0 - L <= 2 && C <= 2
+B1 - L <= 2 && C <= 5
+B2 - o que sobrar
+
+/** Descartado **/
+const getCel = (value: number) => {
+  if (l <= 2) {
+    return 0
+  } else if (l <= 5) {
+    return 1
+  }
+
+  return 2
+}
+
+const GRID = []
+
+for (let l = 0; l < 3; l++) {
+  for (let c = 0; c < 3; c++) {
+    for (let lc = 0; lc < 3; lc++) {
+      for (let cc = 0; cc < 3; cc++) {
+        GRID[l][c][lc][cc] = {
+          id: `${ALPHABET[l]}${c}`,
+          value: '',
+          maybe: '',
+          state: "none"
+        }
+      }
+    }
+  }
+}

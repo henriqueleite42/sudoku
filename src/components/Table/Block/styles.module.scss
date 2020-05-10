@@ -1,0 +1,14 @@
+@import '../../../style/functions/size.scss';
+@import '../../../style/config.scss';
+
+.block {
+  @include heightWidth(
+    (($cellSize * 3) + ($gap * 4)),
+    (($cellSize * 3) + ($gap * 4))
+  );
+
+  border: 2px solid black;
+
+  column-gap: $gap;
+  row-gap: $gap;
+}

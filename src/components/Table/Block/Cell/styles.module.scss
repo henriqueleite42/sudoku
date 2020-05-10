@@ -1,0 +1,50 @@
+@import '../../../../style/functions/size.scss';
+@import '../../../../style/functions/flex.scss';
+@import '../../../../style/config.scss';
+@import '../../../../style/colors.scss';
+
+.div {
+  border: 1px solid black;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+
+  @include flexCenter();
+
+  @include heightWidth($cellSize, $cellSize);
+}
+
+.maybe {
+  font-size: 12px;
+  font-weight: bold;
+  color: $black;
+}
+
+.value {
+  font-weight: bold;
+  font-size: 30px;
+  color: transparentize($color: black, $amount: 0.4);
+}
+
+.error {
+  background-color: #f30204;
+}
+
+.success {
+  background-color: #66be01;
+}
+
+.none, .default {
+  background-color: white;
+
+  &:not(.maybe) > span {
+    color: black !important;
+  }
+}
+
+.special:not(.success):not(.error) {
+  background-color: #aaa !important;
+}
+
+.selected {
+  background-color: $yellow !important;
+}

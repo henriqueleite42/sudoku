@@ -1,0 +1,46 @@
+@import '../config.scss';
+@import '../functions/table.scss';
+
+.table {
+  display: grid;
+
+  > div {
+    &:nth-child(1) {
+      @include cell(1, 1);
+    }
+    &:nth-child(2) {
+      @include line(1);
+      @include column(2);
+    }
+    &:nth-child(3) {
+      @include line(1);
+      @include column(3);
+    }
+
+    &:nth-child(4) {
+      @include line(2);
+      @include column(1);
+    }
+    &:nth-child(5) {
+      @include line(2);
+      @include column(2);
+    }
+    &:nth-child(6) {
+      @include line(2);
+      @include column(3);
+    }
+
+    &:nth-child(7) {
+      @include line(3);
+      @include column(1);
+    }
+    &:nth-child(8) {
+      @include line(3);
+      @include column(2);
+    }
+    &:nth-child(9) {
+      @include line(3);
+      @include column(3);
+    }
+  }
+}

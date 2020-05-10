@@ -1,0 +1,14 @@
+@mixin line ($line) {
+  grid-row-start: $line;
+  grid-row-end: ($line + 1);
+}
+
+@mixin column ($column) {
+  grid-column-start: $column;
+  grid-column-end: ($column + 1);
+}
+
+@mixin cell ($line, $column) {
+  @include line($line);
+  @include column($column);
+}

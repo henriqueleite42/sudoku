@@ -1,0 +1,12 @@
+@import '../../style/functions/size.scss';
+@import '../../style/config.scss';
+
+.table {
+  @include heightWidth(
+    (($cellSize * 9) + ($gap * 16)),
+    (($cellSize * 9) + ($gap * 16))
+  );
+
+  column-gap: $gap;
+  row-gap: $gap;
+}
